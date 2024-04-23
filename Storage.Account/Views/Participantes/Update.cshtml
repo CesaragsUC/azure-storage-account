@@ -1,0 +1,61 @@
+﻿@model Storage.Account.Data.Participante
+
+@{
+    ViewData["Title"] = "Update";
+}
+
+<h1>Update</h1>
+
+<h4>Participante</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Update" enctype="multipart/form-data">
+
+            <input type="hidden" asp-for="PartitionKey" name="partitionKey" />
+            <input type="hidden" asp-for="RowKey" name="rowKey" />
+            <input type="hidden" asp-for="ImageName" />
+            <input type="hidden" asp-for="ETag" name="eTag"/>
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <img src="@ViewBag.ImageUrl" width="150" height="150" />
+
+                <div class="form-group">
+                    <label class="control-label">Update Foto</label>
+                    <input type="file" name="fileName" class="form-control" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Nome" class="control-label"></label>
+                <input asp-for="Nome" class="form-control" />
+                <span asp-validation-for="Nome" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Sobrenome" class="control-label"></label>
+                <input asp-for="Sobrenome" class="form-control" />
+                <span asp-validation-for="Sobrenome" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Atividade" class="control-label"></label>
+                <input asp-for="Atividade" class="form-control" />
+                <span asp-validation-for="Atividade" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
